@@ -20,6 +20,10 @@ class SplashActivity :AppCompatActivity(){
             goToMainActivity()
         },splashTime)
     }
-
+    private fun goToMainActivity(){
+        val mainActivityIntent= Intent(applicationContext,MainActivity::class.java)
+        startActivity(mainActivityIntent)
+        finish()
+    }
 
 }
