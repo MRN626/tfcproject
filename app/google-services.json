@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "373246751365",
+    "firebase_url": "https://tfcproject-626.firebaseio.com",
+    "project_id": "tfcproject-626",
+    "storage_bucket": "tfcproject-626.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373246751365:android:e7d7f8cf6746b86c",
+        "android_client_info": {
+          "package_name": "com.esisalama.tfcproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "373246751365-26m3pqul0idrqpflkr8337ds77lqtln6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.esisalama.tfcproject",
+            "certificate_hash": "cd0139dc057d72ae356dd6b2558c08091e290aa5"
+          }
+        },
+        {
+          "client_id": "373246751365-2aihtgshmtfinqmov7ibl9vprhcv85tv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgeSmWar-kYSs_NPdtS1QFnEkmo_Hw-J8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "373246751365-2aihtgshmtfinqmov7ibl9vprhcv85tv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
