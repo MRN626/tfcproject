@@ -3,7 +3,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="#304769"
+              android:background="#23798E"
               android:gravity="center_vertical"
               android:orientation="vertical"
               android:padding="50dp"
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="#f05924"
+            android:background="#EE6A8C"
             android:text="@string/sign_in"
             android:textColor="@android:color/white" />
     <TextView
