@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tfcproject</string>
+    <string name="app_name">Easy Pay</string>
     <string name="phonenumber">phone number</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
