@@ -47,7 +47,9 @@
             android:text="@string/txt_save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnAddPayment" />
+            app:layout_constraintStart_toEndOf="@+id/btnAddPayment"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp" />
 
         <Button
             android:id="@+id/btnAddPayment"
@@ -58,7 +60,9 @@
             android:text="@string/txt_add_payment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnSaveInNfc"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
