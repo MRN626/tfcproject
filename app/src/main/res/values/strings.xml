@@ -11,4 +11,10 @@
     <string name="not_having_account">Not Having an Account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="logout">Logout</string>
+    <string name="txt_solde">Solde</string>
+    <string name="txt_save">Enreg.</string>
+    <string name="txt_add_payment">Add payment</string>
+    <string name="txt_formatted_sold">%.2f $</string>
+    <string name="txt_payement">Paiement</string>
+    <string name="error_input">Valeur incorrect</string>
 </resources>
