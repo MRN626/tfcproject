@@ -62,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
             dialog.hide()
             Toast.makeText(this, "Connexion reussi", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 }
