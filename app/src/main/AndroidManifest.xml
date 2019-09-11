@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:label="@string/txt_payement"
+            android:parentActivityName=".view.MainActivity"
+            android:launchMode="singleTop"
+            android:name=".view.AddPaymentActivity"/>
+        <activity
+            android:launchMode="singleTop"
             android:name=".view.SplashActivity"
             android:theme="@style/AppTheme.SplashScreen">
             <intent-filter>
@@ -21,17 +27,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
+            android:launchMode="singleTop"
             android:name=".view.LoginActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize">
-
-        </activity>
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity
+            android:launchMode="singleTop"
             android:name=".view.RegisterActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".view.DashboardActivity" />
-        <activity android:name=".view.MainActivity" />
+        <activity
+            android:launchMode="singleTop"
+            android:name=".view.DashboardActivity" />
+        <activity
+            android:launchMode="singleTop"
+            android:name=".view.MainActivity" />
     </application>
 
 </manifest>
