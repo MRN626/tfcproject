@@ -1,7 +1,10 @@
 package com.esisalama.tfcproject.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import com.esisalama.tfcproject.R
 import com.esisalama.tfcproject.databinding.ActivityMainBinding
@@ -29,6 +32,35 @@ class MainActivity : AppCompatActivity() {
             }
 
             binding.account = snapshot.toObject(Account::class.java)
+        }
+
+        binding.btnAddPayment.setOnClickListener {
+            startActivity(Intent(this@MainActivity, AddPaymentActivity::class.java))
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_item_about -> {
+                true
+            }
+
+            R.id.menu_item_setting -> {
+                true
+            }
+
+            R.id.menu_item_logout -> {
+                true
+            }
+
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
         }
     }
 }
