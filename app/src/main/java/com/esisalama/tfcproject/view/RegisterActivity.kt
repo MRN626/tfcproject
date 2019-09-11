@@ -21,7 +21,9 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        formValidation()
+        btnRegister.setOnClickListener {
+            formValidation()
+        }
 
         btnRegisterLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -42,17 +44,17 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             password.isEmpty() -> {
-                etFullName.error = getString(R.string.error_input)
+                etPassword.error = getString(R.string.error_input)
                 return
             }
 
             confirmation.isEmpty() -> {
-                etFullName.error = getString(R.string.error_input)
+                etConfirmPassword.error = getString(R.string.error_input)
                 return
             }
 
             phoneNumber.isEmpty() -> {
-                etFullName.error = getString(R.string.error_input)
+                etUsername.error = getString(R.string.error_input)
                 return
             }
 
