@@ -1,11 +1,11 @@
-package com.esisalama.tfcproject
+package com.esisalama.tfcproject.view
 
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.esisalama.tfcproject.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 

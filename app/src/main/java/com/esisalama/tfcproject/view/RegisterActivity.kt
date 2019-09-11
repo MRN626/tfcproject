@@ -1,9 +1,9 @@
-package com.esisalama.tfcproject
+package com.esisalama.tfcproject.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.esisalama.tfcproject.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {

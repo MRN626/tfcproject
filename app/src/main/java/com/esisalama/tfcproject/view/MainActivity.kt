@@ -1,7 +1,8 @@
-package com.esisalama.tfcproject
+package com.esisalama.tfcproject.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.esisalama.tfcproject.R
 
 class MainActivity : AppCompatActivity() {
 

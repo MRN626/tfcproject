@@ -1,8 +1,9 @@
-package com.esisalama.tfcproject
+package com.esisalama.tfcproject.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.esisalama.tfcproject.R
 import com.google.firebase.auth.FirebaseAuth
 
 
