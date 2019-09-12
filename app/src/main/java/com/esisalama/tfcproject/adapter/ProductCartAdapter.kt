@@ -23,7 +23,7 @@ class ProductCartAdapter(val listener: CustomClick<ProductCart>) : ListAdapter<P
 
         productCartBinding.productCart = currentItem
         productCartBinding.btnMore.setOnClickListener {
-            listener.onItemClick(currentItem)
+            listener.onItemClick(currentItem, productCartBinding.root)
         }
     }
 
