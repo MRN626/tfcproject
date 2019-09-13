@@ -4,8 +4,8 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Product(
+class NfcData(
     val uid: String = "",
-    val price: Double = 0.0,
-    val name: String = ""
+    val accound: Account,
+    val productCart: List<ProductCart>
 ) : Parcelable
