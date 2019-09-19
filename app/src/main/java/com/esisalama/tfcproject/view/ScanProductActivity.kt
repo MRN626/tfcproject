@@ -2,7 +2,6 @@ package com.esisalama.tfcproject.view
 
 import android.Manifest
 import android.app.Activity
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -58,7 +57,11 @@ class ScanProductActivity : AppCompatActivity(), ZXingScannerView.ResultHandler 
             }
 
             dialog.setConfirmClickListener {
-                if (it.alerType == KAlertDialog.WARNING_TYPE || it.alerType == KAlertDialog.ERROR_TYPE) {
+                val dialog = it.alerType == KAlertDialog.WARNING_TYPE
+                        || it.alerType == KAlertDialog.ERROR_TYPE
+                        || it.alerType == KAlertDialog.SUCCESS_TYPE
+
+                if (dialog) {
                     it.dismissWithAnimation()
                     reloadScanner()
                 }
@@ -81,8 +84,8 @@ class ScanProductActivity : AppCompatActivity(), ZXingScannerView.ResultHandler 
             )
 
             mViewModel.add(productCart)
-            startActivity(Intent(this, AddPaymentActivity::class.java))
-            finish()
+            dialog.titleText = "Success"
+            dialog.changeAlertType(KAlertDialog.ERROR_TYPE)
 
         } catch (e: Exception) {
             dialog.changeAlertType(KAlertDialog.ERROR_TYPE)
@@ -99,7 +102,11 @@ class ScanProductActivity : AppCompatActivity(), ZXingScannerView.ResultHandler 
     override fun onResume() {
         super.onResume()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.CAMERA
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
 
                 ActivityCompat
                     .requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 1)

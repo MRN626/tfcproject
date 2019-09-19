@@ -65,4 +65,21 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.0'
 
 }
+
+android {
+    flavorDimensions "version"
+    productFlavors {
+        customer {
+            dimension "version"
+            applicationIdSuffix ".customer"
+            versionNameSuffix "-customer"
+        }
+
+        producer {
+            dimension "version"
+            applicationIdSuffix ".producer"
+            versionNameSuffix "-producer"
+        }
+    }
+}
 apply plugin: 'com.google.gms.google-services'
