@@ -85,12 +85,12 @@ class ScanProductActivity : AppCompatActivity(), ZXingScannerView.ResultHandler 
 
             mViewModel.add(productCart)
             dialog.titleText = "Success"
-            dialog.changeAlertType(KAlertDialog.ERROR_TYPE)
+            dialog.changeAlertType(KAlertDialog.SUCCESS_TYPE)
 
         } catch (e: Exception) {
             dialog.changeAlertType(KAlertDialog.ERROR_TYPE)
             dialog.titleText = "Erreur"
-            dialog.contentText = ""
+            dialog.contentText = e.message
         }
     }
 
