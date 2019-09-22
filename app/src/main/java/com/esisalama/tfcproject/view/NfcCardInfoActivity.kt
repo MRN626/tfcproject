@@ -11,6 +11,7 @@ import com.esisalama.tfcproject.databinding.ActivityNfcCardInfoBinding
 import com.esisalama.tfcproject.model.Operation
 import com.esisalama.tfcproject.model.ProductCart
 import com.google.gson.GsonBuilder
+import org.jetbrains.anko.longToast
 
 class NfcCardInfoActivity : AppCompatActivity(), CustomClick<ProductCart> {
 
@@ -19,21 +20,24 @@ class NfcCardInfoActivity : AppCompatActivity(), CustomClick<ProductCart> {
     }
 
     override fun onItemClick(item: ProductCart, view: View) {
-
+        // This action is not allow here
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val productCartAdapter = ProductCartAdapter(this)
+        binding.adapter = productCartAdapter
 
         val gson = GsonBuilder().create()
         val intentExtra = intent.extras?.getString("nfc-info")
-        val operation = gson.fromJson(intentExtra, Operation::class.java)
-        val productCartAdapter = ProductCartAdapter(this)
 
-        productCartAdapter.submitList(operation.productCart)
-        binding.run {
-            adapter = productCartAdapter
-            totalPrice = operation.productCart.sumByDouble { it.product!!.price }
+        try {
+            val operation = gson.fromJson(intentExtra, Operation::class.java)
+            productCartAdapter.submitList(operation.productCart)
+            binding.totalPrice = operation.productCart.sumByDouble { it.product!!.price }
+        } catch (e: Exception) {
+            binding.totalPrice = 0.0
+            longToast("Format des donnees non prise en charge")
         }
     }
 }
