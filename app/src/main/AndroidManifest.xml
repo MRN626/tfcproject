@@ -8,7 +8,6 @@
     <uses-permission android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.NFC" />
 
-
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -18,10 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:parentActivityName=".view.MainActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".view.AddPaymentActivity"
+            android:label="@string/txt_info_paiement"
+            android:name=".view.NfcCardInfoActivity" />
+        <activity
+            android:name=".view.ScanProductActivity"
             android:label="Scanner produit"
-            android:name=".view.ScanProductActivity" />
+            android:launchMode="singleTop"
+            android:parentActivityName=".view.AddPaymentActivity" />
         <activity
             android:name=".view.AddPaymentActivity"
             android:label="@string/txt_payement"
@@ -34,6 +38,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
