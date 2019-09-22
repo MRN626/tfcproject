@@ -64,6 +64,7 @@ class ProductViewModel(private val app: Application) : AndroidViewModel(app),
     fun removeAll() {
         sharedPreferences.edit {
             clear()
+            _productCart.value = mutableListOf()
         }
     }
 
