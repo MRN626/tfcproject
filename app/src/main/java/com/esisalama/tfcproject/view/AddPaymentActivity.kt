@@ -12,10 +12,8 @@ import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.ActionBar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.get
 import com.esisalama.tfcproject.BuildConfig
@@ -25,7 +23,6 @@ import com.esisalama.tfcproject.adapter.common.CustomClick
 import com.esisalama.tfcproject.databinding.ActivityAddPaymentBinding
 import com.esisalama.tfcproject.model.Operation
 import com.esisalama.tfcproject.model.ProductCart
-import com.esisalama.tfcproject.util.readFromNfc
 import com.esisalama.tfcproject.util.writeNfc
 import com.esisalama.tfcproject.viewModel.ProductViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -105,28 +102,30 @@ class AddPaymentActivity : AppCompatActivity(), CustomClick<ProductCart> {
         val tagAction = intent.action
         if (NfcAdapter.ACTION_NDEF_DISCOVERED == tagAction || NfcAdapter.ACTION_TAG_DISCOVERED == tagAction) {
             when (BuildConfig.FLAVOR) {
-                "producer" -> {
-                    Log.e("ericampire", "producer")
-                    if (stringJson == null) {
-                        longToast("Appuyer sur terminer l'enregistrement")
-                    } else {
-                        if (writeNfc(intent, stringJson!!)) {
-                            Toast.makeText(baseContext, "Saved", Toast.LENGTH_LONG).show()
-                            mViewModel.removeAll()
-                            stringJson = null
-
-                        } else {
-                            Log.e("ericampire", "failed to write information")
-                        }
-                    }
-                }
-                else -> {
-                    Log.e("ericampire", "else")
-                }
+                "producer" -> processWriting(intent)
+                else       -> Log.e("ericampire", "else")
             }
         }
 
         super.onNewIntent(intent)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    private fun processWriting(intent: Intent) {
+        Log.e("ericampire", "producer")
+        if (stringJson == null) {
+            longToast("Appuyer sur terminer l'enregistrement")
+        } else {
+
+            if (writeNfc(intent, stringJson!!)) {
+                Toast.makeText(baseContext, "Saved", Toast.LENGTH_LONG).show()
+                mViewModel.removeAll()
+                stringJson = null
+
+            } else {
+                Log.e("ericampire", "failed to write information")
+            }
+        }
     }
 
     fun addAction(view: View) {
