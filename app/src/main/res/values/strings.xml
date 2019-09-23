@@ -11,4 +11,7 @@
     <string name="not_having_account">Not Having an Account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="logout">Logout</string>
+    <string name="title_section1">solde</string>
+    <string name="title_section2">transaction</string>
+    <string name="title_section3">Contacts</string>
 </resources>
