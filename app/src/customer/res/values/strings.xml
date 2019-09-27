@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Easy Pay Client</string>
+    <string name="phonenumber">phone number</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_having_account">Already Having an Account?</string>
+    <string name="log_in">Log In</string>
+    <string name="not_having_account">Not Having an Account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="logout">Logout</string>
+    <string name="txt_solde">Solde</string>
+    <string name="txt_save">Enreg.</string>
+    <string name="txt_add_payment">Add payment</string>
+    <string name="txt_formatted_sold">%.2f $</string>
+    <string name="txt_payement">Paiement</string>
+    <string name="error_input">Valeur incorrect</string>
+    <string name="txt_total_amount">Montant Total</string>
+    <string name="txt_finish">Terminer</string>
+    <string name="txt_add">Ajouter</string>
+    <string name="txt_mumber">Qte %d</string>
+    <string name="txt_supprimer">Supprimer</string>
+    <string name="demarrer_scanner">Demarrer Scanner</string>
+    <string name="txt_info_paiement">Information de paiement</string>
+</resources>

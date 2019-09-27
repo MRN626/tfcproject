@@ -9,6 +9,7 @@ import android.nfc.Tag
 import android.nfc.tech.Ndef
 import android.nfc.tech.NdefFormatable
 import android.os.Build
+import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.BindingAdapter
@@ -49,6 +50,7 @@ fun Context.writeNfc(intent: Intent, data: String): Boolean {
                     }
 
                 } catch (e: Exception) {
+                    Log.e("ericampire", "${e.message}")
                     return false
                 }
 
@@ -67,6 +69,7 @@ fun Context.writeNfc(intent: Intent, data: String): Boolean {
         }
 
     } catch (e: Exception) {
+        Log.e("ericampire", "${e.message}")
         return false
     }
 
