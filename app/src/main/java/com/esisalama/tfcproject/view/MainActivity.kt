@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> {
-                    Log.e("ericampire", "else")
+                    Log.e("maureen", "else")
                 }
             }
         }
