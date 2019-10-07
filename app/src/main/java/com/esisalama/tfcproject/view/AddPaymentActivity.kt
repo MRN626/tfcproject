@@ -98,12 +98,12 @@ class AddPaymentActivity : AppCompatActivity(), CustomClick<ProductCart> {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onNewIntent(intent: Intent) {
-        Log.e("ericampire", "${intent.action}")
+        Log.e("maureen", "${intent.action}")
         val tagAction = intent.action
         if (NfcAdapter.ACTION_NDEF_DISCOVERED == tagAction || NfcAdapter.ACTION_TAG_DISCOVERED == tagAction) {
             when (BuildConfig.FLAVOR) {
                 "producer" -> processWriting(intent)
-                else       -> Log.e("ericampire", "else")
+                else       -> Log.e("maureen", "else")
             }
         }
 
@@ -112,7 +112,7 @@ class AddPaymentActivity : AppCompatActivity(), CustomClick<ProductCart> {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun processWriting(intent: Intent) {
-        Log.e("ericampire", "producer")
+        Log.e("maureen", "producer")
         if (stringJson == null) {
             longToast("Appuyer sur terminer l'enregistrement")
         } else {
@@ -123,7 +123,7 @@ class AddPaymentActivity : AppCompatActivity(), CustomClick<ProductCart> {
                 stringJson = null
 
             } else {
-                Log.e("ericampire", "failed to write information")
+                Log.e("maureen", "failed to write information")
             }
         }
     }
