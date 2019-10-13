@@ -5,18 +5,14 @@
 
     <data>
         <variable
-            name="totalPrice"
-            type="Double" />
-
-        <variable
-            name="adapter"
-            type="com.esisalama.tfcproject.adapter.ProductCartAdapter" />
+            name="account"
+            type="com.esisalama.tfcproject.model.Account" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.AddPaymentActivity">
+        android:layout_height="match_parent">
+
 
         <TextView
             android:textColor="@android:color/black"
@@ -25,52 +21,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/txt_total_amount"
+            android:text="@string/txt_solde"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:text="@{@string/txt_formatted_sold(totalPrice)}"
-            android:id="@+id/textView3"
-            style="@style/TextAppearance.AppCompat.Display1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            style="@style/TextAppearance.AppCompat.Display1"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintHorizontal_bias="0.478"
+            android:text="@{@string/txt_formatted_sold(account.sold)}"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             tools:text="1400 USD" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvListProduct"
+        <Button
+            android:id="@+id/btnSaveInNfc"
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:text="@string/txt_save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
-            app:setAdapter="@{adapter}"
-            tools:listitem="@layout/item_product_cart" />
+            app:layout_constraintStart_toEndOf="@+id/btnAddPayment"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp" />
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnAddPayment"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Confirmer"
-            android:id="@+id/btnConfirmation"
-            app:icon="@drawable/ic_playlist_add_check"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:visibility="gone"
+            android:text="@string/txt_add_payment"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/btnSaveInNfc"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="4dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

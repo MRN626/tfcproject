@@ -25,5 +25,6 @@
     <string name="txt_supprimer">Supprimer</string>
     <string name="demarrer_scanner">Demarrer Scanner</string>
     <string name="txt_info_paiement">Information de paiement</string>
+    <string name="datetime_format">dd/MM/yyyy à HH:mm</string>
 </resources>
 
