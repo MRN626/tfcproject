@@ -17,9 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:parentActivityName=".view.HistoriqueTransactionActivity"
+            android:label="Detail"
+            android:name=".view.DetailHistoriqueActivity"/>
+        <activity
+            android:name=".view.HistoriqueTransactionActivity"
             android:label="Historique"
-            android:parentActivityName=".view.MainActivity"
-            android:name=".view.HistoriqueTransactionActivity" />
+            android:parentActivityName=".view.MainActivity" />
         <activity
             android:name=".view.NfcCardInfoActivity"
             android:label="@string/txt_info_paiement"
