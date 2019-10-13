@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="formatteDate"
+            type="String" />
+
+        <variable
+            name="operation"
+            type="com.esisalama.tfcproject.model.HistoriqueOperation" />
+    </data>
+
+    <LinearLayout
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            tools:text="Mardi 12/12/2019"
+            android:text="@{formatteDate}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:text="@{@string/txt_formatted_sold(operation.montant)}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            tools:text="12000Fc"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" />
+
+        <View
+            android:background="#aaa"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+    </LinearLayout>
+</layout>
