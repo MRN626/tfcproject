@@ -121,6 +121,11 @@ class MainActivity : AppCompatActivity() {
                 true
             }
 
+            R.id.menu_item_transaction_historique -> {
+                startActivity(Intent(baseContext, HistoriqueTransactionActivity::class.java))
+                true
+            }
+
             else -> {
                 super.onOptionsItemSelected(item)
             }
