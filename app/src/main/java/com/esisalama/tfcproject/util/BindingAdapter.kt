@@ -10,12 +10,16 @@ import android.nfc.tech.Ndef
 import android.nfc.tech.NdefFormatable
 import android.os.Build
 import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.esisalama.tfcproject.R
 import java.io.UnsupportedEncodingException
 import java.nio.charset.Charset
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.experimental.and
 
 @BindingAdapter(value = ["setAdapter"])
@@ -23,6 +27,44 @@ fun RecyclerView.bindRecyclerViewAdapter(adapter: RecyclerView.Adapter<*>) {
     this.run {
         this.setHasFixedSize(true)
         this.adapter = adapter
+    }
+}
+
+fun String.getDateFromString(): Date? {
+    val regex = """^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$""".toRegex()
+
+    return if (regex.matches(this)) {
+        SimpleDateFormat("dd/mm/yyyy", Locale.FRANCE).parse(this)
+    } else {
+        null
+    }
+}
+
+fun Date.getFormattedDate(format: String): String? {
+    return try {
+        val formatter = SimpleDateFormat(format, Locale.getDefault())
+        formatter.format(this)
+    } catch (exp: Exception) {
+        null
+    }
+}
+
+@BindingAdapter(value = ["bindDateAndTime"])
+fun TextView.bindDateAndTime(date: Date?) {
+    text = if (date == null) {
+        "- - -"
+    } else {
+        date.getFormattedDate(context.getString(R.string.datetime_format))
+    }
+}
+
+fun String.getTimeFromString(): Date? {
+    val regex = """([01]?[0-9]|2[0-3]):[0-5][0-9]""".toRegex()
+
+    return if (regex.matches(this)) {
+        SimpleDateFormat("HH:mm", Locale.getDefault()).parse(this)
+    } else {
+        null
     }
 }
 
